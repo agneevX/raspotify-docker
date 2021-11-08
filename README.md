@@ -33,6 +33,8 @@ For more info on configuring your Raspberry Pi for this to work, go to https://g
 
 * ALSA_SOUND_LEVEL: overall sound level on ALSA output. defaults to 100% so that usb sound noises are reduced because there will be needed less amplification
 
+* APPLY_VOLUME_ON_START: this must set to `true` for the volume to be set to `ALSA_SOUND_LEVEL` at container startup.
+
 * EQUALIZATION: an equalization profile name or a series of 10 space separated values from 0-100 (one for each equalizer bin)
   * profile names: flat, classical, club, dance, bass, treble, live, party, pop, rock, techno
   * bins example: "90 87 87 82 80 80 82 83 91 95"
