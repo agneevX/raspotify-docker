@@ -43,7 +43,7 @@ if [ "$EQUALIZATION" != "" ]; then
 fi
 
 set +e
-if [ "$ALSA_SOUND_LEVEL" != "" ]; then
+if [ "$CHANGE_VOLUME_ON_START" == "true" ] && [ "$ALSA_SOUND_LEVEL" != "" ]; then
   echo "Applying sound level to $ALSA_SOUND_LEVEL"
   #TODO: enhance this logic
   amixer cset numid=1 "$ALSA_SOUND_LEVEL"
@@ -58,5 +58,3 @@ fi
 set -e
 
 echo "Starting Raspotify..."
-/usr/bin/librespot $VERB --name "$SPOTIFY_NAME" $BACKEND $DEVICE --bitrate 320 --disable-audio-cache --enable-volume-normalisation
-
