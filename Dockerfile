@@ -26,3 +26,4 @@ COPY /equalizer.sh /
 
 COPY /startup.sh /
 ENTRYPOINT /startup.sh
+CMD --bitrate 320 $VERB $BACKEND $DEVICE --disable-audio-cache --enable-volume-normalisation
